@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register Form</title>
+    <link rel="stylesheet" type="text/css" href="projectmain.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-register">
+            <div class="nav-buttons">
+                <button id="loginBtn" class='active' >Login </button>
+                <button id="registerBtn">Register</button>
+            </div>
+            <div class="form-group">
+                <form action="" id="loginform">
+                    <label for="username">Email</label>
+                    <input type="text" id="username">
+                    <label for="password">password</label>
+                    <input type="text" id="password">
+                    <input type="button" name="log" id="logbutton" value="Login" onclick="login()">
+                </form>
+                <form action="" id="registerform">
+                    <label for="fullname">fullname</label>
+                    <input type="text" id="fullname">
+                    <label for="email">email</label>
+                    <input type="text" id="email">
+                    <label for="passwword">password</label>
+                    <input type="text" id="password">
+                    <label for="confirmpassword">confirm password</label>
+                    <input type="text" id="confirmpassword">
+                    <input type="button" name="log" id="logbutton" value="Login" onclick="login()">
+                </form>
+            </div>
+            <div id="forgot">
+                <a href="">forgot password?</a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+         function login(){
+               var email = document.forms["loginform"]["username"].value;           
+               var password = document.forms["loginform"]["password"].value;           
+         
+            if(email=='chitkara@gmail.com' && password=='123456')
+             {
+               window.location.href="ordernow.html";
+             }
+             else
+             {
+                alert("ENTER CORRECT USERNAME OR PASSWORD");
+             }
+        }
+       
+        loginBtn.onclick= function() {
+            loginform.style.left='0px';
+            loginform.style.opacity='1';
+            forgot.style.left='0px';
+            forgot.style.opacity='1';
+            registerform.style='500px';
+            loginBtn.classList.add('active');
+            registerBtn.classList.remove('active');
+            registerform.style.opacity='0';
+        }
+
+
+        registerBtn.onclick= function() {
+            registerform.style.left='0px';
+            registerform.style.opacity='1';
+            loginform.style.left='-500px';
+            loginform.style.opacity='0';
+            forgot.style.left='-500px';
+            forgot.style.opacity='0';
+            registerBtn.classList.add('active');
+            loginBtn.classList.remove('active');
+
+        }
+
+  
+
+        
+    </script>
+</body>
+</html>
